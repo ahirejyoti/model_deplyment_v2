@@ -1,8 +1,7 @@
 
 import numpy as np
 from flask import Flask, request, jsonify, render_template
-from flask_pymongo import PyMongo
-from bson.objectid import ObjectId
+
 import pickle
 
 app = Flask(__name__)
@@ -10,8 +9,8 @@ model = pickle.load(open('model.pkl', 'rb'))
 @app.route("/")
 def home():
     return render_template("index.html")
-mongo = PyMongo(app)
-Collection_1 = mongo.db.Collection_1
+
+
 
 @app.route('/')
 def home():
